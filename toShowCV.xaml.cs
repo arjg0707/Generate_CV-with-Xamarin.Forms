@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -24,10 +24,10 @@ namespace Project_002
         private string phoneContentProperty;
         private string emailContentProperty;
         private string nationalityContentProperty;
-        private string levelContentProperty;
-        private ObservableCollection<string> languagesContentProperty = new ObservableCollection<string>();
-        private string aptitudesContentProperty;
-        private ObservableCollection<string> skillsContentProperty = new ObservableCollection<string>();
+        private List<string> levelContentProperty = new List<string>();
+        private List<string> languagesContentProperty = new List<string>();
+        private List<string> aptitudesContentProperty = new List<string>();
+        private List<string> skillsContentProperty = new List<string>();
         private string profileContentProperty;
 
         public string NameContentProperty
@@ -84,7 +84,7 @@ namespace Project_002
                 OnPropertyChanged(nameof(NationalityContentProperty));
             }
         }
-        public string LevelContentProperty
+        public List<string> LevelContentProperty
         {
             get { return levelContentProperty; }
             set
@@ -93,7 +93,7 @@ namespace Project_002
                 OnPropertyChanged(nameof(LevelContentProperty));
             }
         }
-        public ObservableCollection<string> LanguagesContentProperty
+        public List<string> LanguagesContentProperty
         {
             get { return languagesContentProperty; }
             set
@@ -105,7 +105,7 @@ namespace Project_002
                 }          
             }
         }
-        public string AptitudesContentProperty
+        public List<string> AptitudesContentProperty
         {
             get { return aptitudesContentProperty; }
             set
@@ -114,7 +114,7 @@ namespace Project_002
                 OnPropertyChanged(nameof(AptitudesContentProperty));
             }
         }
-        public ObservableCollection<string> SkillsContentProperty
+        public List<string> SkillsContentProperty
         {
             get { return skillsContentProperty; }
             set
@@ -136,21 +136,21 @@ namespace Project_002
             }
         }
 
-        public toShowCV(string nameContentProperty_, DateTime dateContentProperty_, string occupationContentProperty_, string phoneContentProperty_, string emailContentProperty_, string nationalityContentProperty_, string levelContentProperty_, ObservableCollection<string> languagesContentProperty_, string aptitudesContentProperty_,  ObservableCollection<string> skillsContentProperty_, string profileContentProperty_)
+        public toShowCV(string nameContentProperty, DateTime dateContentProperty, string occupationContentProperty, string phoneContentProperty, string emailContentProperty, string nationalityContentProperty, List<string> levelContentProperty, List<string> languagesContentProperty, List<string> aptitudesContentProperty, List<string> skillsContentProperty, string profileContentProperty)
         {
             InitializeComponent();
             BindingContext = this;
-            NameContentProperty = nameContentProperty_;
-            DateContentProperty = dateContentProperty_;
-            OccupationContentProperty = occupationContentProperty_;
-            PhoneContentProperty = phoneContentProperty_;
-            EmailContentProperty = emailContentProperty_;
-            NationalityContentProperty = nationalityContentProperty_;
-            LevelContentProperty = levelContentProperty_;
-            LanguagesContentProperty = new ObservableCollection<string>(languagesContentProperty_);
-            AptitudesContentProperty = aptitudesContentProperty_;
-            SkillsContentProperty = new ObservableCollection<string>(skillsContentProperty_);
-            ProfileContentProperty = profileContentProperty_;
+            NameContentProperty = nameContentProperty;
+            DateContentProperty = dateContentProperty;
+            OccupationContentProperty = occupationContentProperty;
+            PhoneContentProperty = phoneContentProperty;
+            EmailContentProperty = emailContentProperty;
+            NationalityContentProperty = nationalityContentProperty;
+            LevelContentProperty = new List<string>(levelContentProperty);
+            LanguagesContentProperty = new List<string>(languagesContentProperty);
+            AptitudesContentProperty = new List<string>(aptitudesContentProperty);
+            SkillsContentProperty = new List<string>(skillsContentProperty);
+            ProfileContentProperty = profileContentProperty;
         }
     }
 }
