@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project_002.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="7.5,0,7.5,7.5" BackgroundColor="RoyalBlue">
+            <Grid RowSpacing="5" RowDefinitions="Auto,Auto,Auto,Auto">
+                <StackLayout Grid.Row="2">
+                    <Label Text="Please Fill out this Form"
+                           FontSize="25"
+                           TextColor="GhostWhite"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                    <Label Text="Enter Your Name: " TextColor="GhostWhite" FontSize="16"/>
+                    <Entry x:Name="name_"
+                       Placeholder="Please Enter your name"
+                       PlaceholderColor="GhostWhite"
+                       FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+                    <Label Text="Enter Your Date of Birth: " TextColor="GhostWhite" FontSize="16"/>
+                    <DatePicker x:Name="date_" 
+                            FontSize="14"
+                            TextColor="GhostWhite"
+                            FontAttributes="None"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+                    <Label Text="Enter Your Occupation: " TextColor="GhostWhite" FontSize="16"/>
+                    <Entry x:Name="occupation_"
+                       Placeholder="Please Enter your Occupation"
+                       PlaceholderColor="GhostWhite"
+                       FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="3" Grid.Column="0">
+                    <Label Text="Enter Your Phone Number: " TextColor="GhostWhite" FontSize="16"/>
+                    <Entry x:Name="phone_"
+                       Placeholder="Please Enter your Phone Number"
+                       PlaceholderColor="GhostWhite"
+                       FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="0">
+                    <Label Text="Enter Your Email: " TextColor="GhostWhite" FontSize="16"/>
+                    <Entry x:Name="email_"
+                       Placeholder="Please Enter your Email"
+                       PlaceholderColor="GhostWhite"
+                       FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="5" Grid.Column="0">
+                    <Label Text="Select Your Nationality: " TextColor="GhostWhite" FontSize="16"/>
+                    <Picker Title="Please Select Your Nationality"
+                        x:Name="nationality_"
+                        FontSize="14"
+                        Grid.Column="0"
+                        TitleColor="GhostWhite"
+                        TextColor="GhostWhite"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Colombia</x:String>
+                                <x:String>Chile</x:String>
+                                <x:String>Brazil</x:String>
+                                <x:String>Perú</x:String>
+                                <x:String>Argentina</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="6" Grid.Column="0">
+                    <Label Text="Choose Your English Level: " TextColor="GhostWhite" FontSize="16"/>
+                    <RadioButton x:Name="RadioBtnBasico" FontSize="14" Content="Básico" TextColor="GhostWhite"/>
+                    <RadioButton x:Name="RadioBtnIntermedio" FontSize="14" Content="Intermedio" TextColor="GhostWhite"/>
+                    <RadioButton x:Name="RadioBtnAvanzado" FontSize="14" Content="Avanzado" TextColor="GhostWhite"/>
+                    <RadioButton x:Name="RadioBtnFluido" FontSize="14" Content="Fluido" TextColor="GhostWhite"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="7" Grid.Column="0">
+                    <Label Text="Select Programming Languages: " TextColor="GhostWhite" FontSize="16"/>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="Cpp" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="C++" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                        <CheckBox x:Name="Csharp" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="C#" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                        <CheckBox x:Name="Java" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="3" Grid.Column="1" Text="Java" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                        <CheckBox x:Name="Python" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="4" Grid.Column="1" Text="Python" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="8" Grid.Column="0">
+                    <Label Text="Select Your Aptitudes: " TextColor="GhostWhite" FontSize="16"/>
+                    <Picker Title="Please Select Your Aptitudes"
+                        x:Name="aptitudes_"
+                        TitleColor="GhostWhite"
+                        TextColor="GhostWhite"
+                        FontSize="14"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Inteligencia Emocional</x:String>
+                                <x:String>Espiritu critico</x:String>
+                                <x:String>Trabajo en equipo</x:String>
+                                <x:String>Capacidad analitica</x:String>
+                                <x:String>Habilidades fisicas</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="9" Grid.Column="0">
+                    <Label Text="Select Your Skills: " TextColor="GhostWhite" FontSize="16"/>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="4.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="skill_1" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="Acondicionamiento fisico" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                        <CheckBox x:Name="skill_2" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="Creacion de videos deportivos" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                        <CheckBox x:Name="skill_3" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="Pack office" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                        <CheckBox x:Name="skill_4" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Grid.Row="3" Grid.Column="1" Text="Tenis" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
+
+                    </Grid>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Grid.Row="11" Grid.Column="0">
+                    <Label Text="Write Your Profile: " TextColor="GhostWhite" FontSize="16"/>
+                    <Editor x:Name="profile_" Text="Enter Some text here... " FontSize="14" BackgroundColor="GhostWhite" HeightRequest="100" AutoSize="TextChanges"/>
+                </StackLayout>
+
+            </Grid>
+
+            <StackLayout>
+                <Button Text="Submit" x:Name="btnSubmit_" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="OnButtonClicked"
+                        BorderWidth="1"
+                        BorderColor="MidnightBlue"
+                        BackgroundColor="MidnightBlue"
+                        CornerRadius="8"
+                        TextColor="GhostWhite"/>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
