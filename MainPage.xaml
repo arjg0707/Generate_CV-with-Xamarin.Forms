@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Project_002.MainPage">
@@ -71,7 +71,8 @@
                     <Entry x:Name="email_"
                        Placeholder="Please Enter your Email"
                        PlaceholderColor="GhostWhite"
-                       FontSize="14"/>
+                       FontSize="14"
+                       />
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" Grid.Row="5" Grid.Column="0">
@@ -97,15 +98,21 @@
 
                 </StackLayout>
 
-                <StackLayout Grid.Row="6" Grid.Column="0">
+                <StackLayout x:Name="levels_" Grid.Row="6" Grid.Column="0">
                     <Label Text="Choose Your English Level: " TextColor="GhostWhite" FontSize="16"/>
                     <RadioButton x:Name="RadioBtnBasico" FontSize="14" Content="Básico" TextColor="GhostWhite"/>
                     <RadioButton x:Name="RadioBtnIntermedio" FontSize="14" Content="Intermedio" TextColor="GhostWhite"/>
                     <RadioButton x:Name="RadioBtnAvanzado" FontSize="14" Content="Avanzado" TextColor="GhostWhite"/>
                     <RadioButton x:Name="RadioBtnFluido" FontSize="14" Content="Fluido" TextColor="GhostWhite"/>
+                    <Button Text="+" Clicked="AddBtnEnglish"
+                            BorderWidth="1"
+                            BorderColor="MidnightBlue"
+                            BackgroundColor="MidnightBlue"
+                            CornerRadius="8"
+                            TextColor="GhostWhite"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Vertical" Grid.Row="7" Grid.Column="0">
+                <StackLayout x:Name="languageslst" Orientation="Vertical" Grid.Row="7" Grid.Column="0">
                     <Label Text="Select Programming Languages: " TextColor="GhostWhite" FontSize="16"/>
                     <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Grid.RowDefinitions>
@@ -135,6 +142,12 @@
                         <Label Grid.Row="4" Grid.Column="1" Text="Python" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
 
                     </Grid>
+                    <Button Text="+" Clicked="AddBtnLanguages" 
+                            BorderWidth="1"
+                            BorderColor="MidnightBlue"
+                            BackgroundColor="MidnightBlue"
+                            CornerRadius="8"
+                            TextColor="GhostWhite"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" Grid.Row="8" Grid.Column="0">
@@ -157,12 +170,17 @@
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>
-
+                    <Button Text="+" Clicked="AddBtnAptitudes" 
+                            BorderWidth="1"
+                            BorderColor="MidnightBlue"
+                            BackgroundColor="MidnightBlue"
+                            CornerRadius="8"
+                            TextColor="GhostWhite"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" Grid.Row="9" Grid.Column="0">
                     <Label Text="Select Your Skills: " TextColor="GhostWhite" FontSize="16"/>
-                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Grid x:Name="skillslst" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -190,6 +208,15 @@
                         <Label Grid.Row="3" Grid.Column="1" Text="Tenis" VerticalOptions="Center" TextColor="GhostWhite" FontSize="14"/>
 
                     </Grid>
+                    <Button Text="+" Clicked="AddBtnSkills" 
+                            BorderWidth="1"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            BorderColor="MidnightBlue"
+                            BackgroundColor="MidnightBlue"
+                            CornerRadius="8"
+                            TextColor="GhostWhite"/>
+
                 </StackLayout>
                 <StackLayout Orientation="Vertical" Grid.Row="11" Grid.Column="0">
                     <Label Text="Write Your Profile: " TextColor="GhostWhite" FontSize="16"/>
@@ -199,7 +226,7 @@
             </Grid>
 
             <StackLayout>
-                <Button Text="Submit" x:Name="btnSubmit_" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="OnButtonClicked"
+                <Button Text="Submit" x:Name="OnButtonClicked_" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="OnButtonClicked"
                         BorderWidth="1"
                         BorderColor="MidnightBlue"
                         BackgroundColor="MidnightBlue"
