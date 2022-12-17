@@ -1,11 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Project_002.toShowCV">
     <ContentPage.Content>
         <ScrollView>
-        <Grid BackgroundColor="GhostWhite">
+        <Grid BackgroundColor="GhostWhite" RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -148,10 +151,7 @@
                    HorizontalOptions="Start"/>
             
             <StackLayout Grid.Column="0" Grid.Row="12" VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
-                    <Label Text="{Binding LanguagesContentProperty}"
-                       TextColor="Black"
-                       FontSize="14"
-                       HorizontalOptions="Start"/>
+                    <CollectionView ItemsSource="{Binding LanguagesContentProperty}"/>
             </StackLayout>
             
             <Label Text="HABILIDADES"
@@ -162,11 +162,8 @@
                    HorizontalOptions="Start"/>
             
             <StackLayout Grid.Column="0" Grid.Row="14" VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
-                    <Label Text="{Binding SkillsContentProperty}"
-                       TextColor="Black"
-                       FontSize="14"
-                       HorizontalOptions="Start"/>
-            </StackLayout>
+                    <CollectionView ItemsSource="{Binding SkillsContentProperty}"/>
+             </StackLayout>
             
             <Label Text="OTROS INTERESES"
                    Grid.Column="0"
